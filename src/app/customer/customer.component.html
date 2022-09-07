@@ -1,0 +1,96 @@
+<div class="border">
+  <div class="col-xs-12 col-ms-11">
+    <h1 class="charge">ADD CUSTOMER CHARGE PROFILE</h1>
+    <div class="example">
+      <h2>| CHARGE APPLICABILITY</h2>
+      <kendo-dropdownlist class="drop" defaultItem="Select items..." [data]="charge"></kendo-dropdownlist>
+
+      <h2 id="pm">| PRICING MODEL</h2>
+      <kendo-dropdownlist class="drop" defaultItem="Select items..." [data]="price"> </kendo-dropdownlist>
+
+    </div>
+    <div class="example">
+      <h2>| COUNTRY</h2>
+      <kendo-dropdownlist class="drop" defaultItem="Select items..." [data]="country"> </kendo-dropdownlist>
+
+      <h2 id="co">| CHARGES OFFERING</h2>
+      <kendo-dropdownlist class="drop" defaultItem="Select items..." [data]="chargeoffering"> </kendo-dropdownlist>
+    </div>
+
+    <div class="example">
+      <h2 id="aba">AVERAGE BALANCE APPLICABILITY</h2>
+      <input type="checkbox" kendoCheckBox />
+    </div>
+
+    <div class="example">
+      <h2>CHARGE EFFECTIVE DATE</h2>
+      <kendo-datepicker placeholder="" calendarType="classic"></kendo-datepicker>
+    </div>
+    <hr>
+    <div>
+      <h1 class="products">PRODUCTS</h1>
+    </div>
+    <div class="check">
+      <input type="checkbox" (click)="chkBox()" kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="CASH COLLECTIONS"></kendo-label>
+      <br>
+      <input type="checkbox" kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="DIRECT DEBIT SYSTEM"></kendo-label>
+      <br>
+      <input type="checkbox" kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="IMR"></kendo-label>
+      <br>
+    </div>
+
+    <div class="check">
+      <input type="checkbox" [(ngModel)]="position1" (click)="chkBox()" kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="CHEQUE COLLECTIONS"></kendo-label><br>
+      <input type="checkbox" #notification kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="VAM"></kendo-label><br>
+      <input type="checkbox" #notification kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="RCD"></kendo-label><br>
+    </div>
+
+    <div class="check">
+      <input type="checkbox" [(ngModel)]="position2" kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="CASH DELIVERY"></kendo-label><br>
+      <input type="checkbox" #notification kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="EIPP"></kendo-label><br>
+      <input type="checkbox" #notification kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="LIQUIDITY"></kendo-label><br>
+    </div>
+
+    <div class="check">
+      <input type="checkbox" #notification kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="CASH EXCHANGE"></kendo-label><br>
+      <input type="checkbox" #notification kendoCheckBox />
+      <kendo-label class="k-checkbox-label" text="COMMON CHARGES"></kendo-label><br>
+    </div>
+  </div>
+
+  <div class="example-wrapper">
+    <kendo-tabstrip>
+      <kendo-tabstrip-tab title="Cash Collections" [selected]="true" *ngIf="isShown">
+        <ng-template kendoTabContent>
+          <p>Tab 1 Content</p>
+        </ng-template>
+      </kendo-tabstrip-tab>
+
+      <kendo-tabstrip-tab title="Cheque Collections" [selected]="false">
+        <ng-template kendoTabContent>
+          <p>Tab 1 Content</p>
+        </ng-template>
+      </kendo-tabstrip-tab>
+
+      <kendo-tabstrip-tab title="Cash Devivery" [selected]="false">
+        <ng-template kendoTabContent>
+          <p>Tab 1 Content</p>
+        </ng-template>
+      </kendo-tabstrip-tab>
+    </kendo-tabstrip>
+    </div>
+
+
+    <div>
+      <app-footer></app-footer>
+    </div>

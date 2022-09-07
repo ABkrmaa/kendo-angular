@@ -1,0 +1,73 @@
+#my{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:gray;
+  font-size: 30px;
+  margin-right: 4px;
+}
+.container{
+  margin: 0px  12px;
+  padding: 0px 0px;
+  max-width: 100%;
+}
+
+#bank{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(99, 91, 91);
+  font-size: 30px;
+}
+
+.arabic{
+  margin-right: 3px;
+  margin-left: 68%;
+  text-decoration: none;
+  display: inline-block;
+  
+  }
+  
+  .vl {
+    border-left: thin solid black;
+    width: 10px;
+    height: 35px;
+    list-style: none;
+    /* margin-left: 0px; */
+    /* margin-right: 1px; */
+  }
+
+.custom-toolbar {
+  /* width: 100%;
+  background-color: #f6f6f6;
+  line-height: 10px;
+  border-bottom: inset;
+  border-bottom-width: 1px;
+  padding: 3px 8px;
+  color: #656565; */
+
+  /* background-color: #307eab; */
+  height: 90%;
+  overflow: auto;
+  outline: none;
+  overflow-y: hidden;
+  padding-bottom: 15px;
+  -ms-overflow-style: scroll;
+  scrollbar-width: 50px;
+  padding-right: 0px;
+}
+
+kendo-drawer{
+  background-color:  #307eab;
+    text-align: center; 
+    color: white; 
+     width: 50%; 
+     height: 80vh;
+}
+kendo-drawer-content {
+  
+   width: 10  0%; 
+   /* padding-left: 10px; */
+    color: white; 
+    height: 123.2vh;
+}
+/* kendo-drawer-container {
+
+  overflow-y: hidden;
+} */

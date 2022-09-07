@@ -1,0 +1,49 @@
+* {
+  color: black;
+  font-size: 12px;
+}
+
+.border {
+  border: solid 20px;
+  margin-left: 5px;
+}
+
+.drop {
+  width: 300px;
+  /* margin-bottom: 5px; */
+}
+
+#pm{
+  margin-top: 8px;
+}
+
+#co{
+  margin-top: 8px;
+}
+
+#aba{
+  margin-bottom: 13px;
+}
+
+
+.products, .charge {
+  padding: 10px 10px 10px 10px;
+  color: aliceblue;
+  background-color: #307eab;
+  text-align: left;
+  /* margin-left: 0px; */
+}
+
+.example{
+  margin-left: 9px;
+  width: fit-content;
+  display: inline-block;
+  margin-right: 50px;
+  margin-bottom: 2px;
+}
+
+.check {
+  display: inline-block;
+  padding: 10px 0px 10px 50px;
+  margin-right: 50px;
+}

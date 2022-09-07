@@ -1,0 +1,76 @@
+<!-- <p>charge works!</p> -->
+
+
+<div>
+    <h6 id="pending-pricing" style="margin-left: 0;">PENDING PRICING</h6>
+</div>
+
+
+<div>
+
+    <div class="col-md-11">
+
+        <div id="table">
+
+            <p class="dropdownlist">
+                <kendo-dropdownlist [data]="dropDownItems" textField="text" valueField="value"
+                    [defaultItem]="defaultItem" (valueChange)="handleFilterChange($event)" [style.width.px]="170">
+                </kendo-dropdownlist>
+
+            </p>
+
+            <kendo-grid [data]="(gridItems | async)!" [pageSize]="pageSize" [skip]="skip" [pageable]="true"
+                (pageChange)="pageChange($event)" [sortable]="true" [sort]="sortDescriptor"
+                (sortChange)="handleSortChange($event)" [height]="400">
+
+                <ng-template kendoGridToolbarTemplate>
+                    <button kendoGridPDFCommand id="pdf" icon="file-pdf"></button>
+                    <button kendoGridExcelCommand id="excel" icon="file-excel"></button>
+
+                    <kendo-grid-spacer></kendo-grid-spacer>
+                    <Strong>SEARCH</Strong>
+                    <input [style.width.px]="180" kendoTextBox />
+                </ng-template>
+
+                <kendo-grid-column field="" [width]="40" filter="boolean">
+                    <ng-template kendoGridCellTemplate let-dataItem>
+                        <input type="checkbox" [checked]="dataItem.Discontinued" />
+                    </ng-template>
+                </kendo-grid-column>
+                <kendo-grid-column field="ProductID" title="PRICING MODEL - DESCRIPTION" [width]="230">
+                </kendo-grid-column>
+                <kendo-grid-column field="ProductName" title="COUNTRY" [width]="130"> </kendo-grid-column>
+                <kendo-grid-column field="Category.CategoryName" title="EFFECTIVE DATE" [width]="130">
+                </kendo-grid-column>
+                <kendo-grid-column field="UnitPrice" title="RECORD TYPE" [width]="140" format="{0:c}">
+                </kendo-grid-column>
+                <kendo-grid-column field="" title="UPDATED BY" [width]="130"> </kendo-grid-column>
+                <kendo-grid-column field="" title="UPDATED ON" [width]="130"> </kendo-grid-column>
+                <kendo-grid-column field="" title="STATUS" [width]="130"> </kendo-grid-column>
+
+                <ng-template kendoGridToolbarTemplate>
+                    <button kendoGridPDFCommand>Export to PDF</button>
+                </ng-template>
+                <kendo-grid-pdf fileName="Grid.pdf">
+                </kendo-grid-pdf>
+                <kendo-grid-excel fileName="products.xlsx"></kendo-grid-excel>
+
+
+
+            </kendo-grid>
+            <br>
+            <div>
+                <h6>APPROVER REMARKS</h6>
+                <textarea rows="5" cols="50"></textarea> <br>
+                <button class="btn btn-success">APPROVE</button>
+                <button class="btn btn-danger">REJECT</button>
+                <button class="btn btn-light">BACK</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <app-footer></app-footer>
+    </div>
+    
